@@ -1,5 +1,6 @@
 require_relative 'valera'
 require_relative 'actions'
+require_relative 'saver'
 
 class GameProcess
   attr_accessor :action_item, :valera, :actions
@@ -12,7 +13,9 @@ class GameProcess
     '5' => ->(stats) { Actions.drink_with_marginals(stats) },
     '6' => ->(stats) { Actions.sing_in_metro(stats) },
     '7' => ->(stats) { Actions.go_to_sleep(stats) },
-    '9' => ->(_stats) { exit }
+    '8' => ->(stats) { Saver.saver(stats, 8) },
+    '9' => ->(stats) { Saver.saver(stats, 9) },
+    '10' => ->(_stats) { exit }
   }
 
   def initialize
@@ -32,7 +35,8 @@ class GameProcess
     puts('6. Петь в метро')
     puts('7. Спать')
     puts('8. Сохранить игру')
-    puts('9. Выйти')
+    puts('9. Загрузить игру')
+    puts('10. Выйти')
   end
 
   def read_action
