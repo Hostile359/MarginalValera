@@ -25,11 +25,11 @@ RSpec.describe Valera do
     end
     context 'check_false' do
       stats = {
-          'health' => 100,
-          'mana' => 50,
-          'fun' => -102,
-          'tire' => 25,
-          'money' => 2500
+        'health' => 100,
+        'mana' => 50,
+        'fun' => -102,
+        'tire' => 25,
+        'money' => 2500
       }
       it { expect(valera.check_stats(stats)).to eq false }
     end

@@ -23,9 +23,9 @@ class Valera
 
   def fix_stats(stats)
     stats['health'] = 100 if stats['health'] > 100
-    stats['mana'] = 0 if stats['mana'] < 0
+    stats['mana'] = 0 if (stats['mana']).negative?
     stats['fun'] = 10 if stats['fun'] > 10
-    stats['tire'] = 0 if stats['tire'] < 0
+    stats['tire'] = 0 if (stats['tire']).negative?
   end
 
   def check_mana(mana)
