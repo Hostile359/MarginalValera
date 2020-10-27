@@ -12,17 +12,20 @@ class Valera
   end
 
   def check_stats(stats)
-    if check_health(stats['health']) && check_mana(stats['mana']) \
-       && check_fun(stats['fun']) && check_tire(stats['tire']) \
-       && check_money(stats['money'])
+    fix_stats(stats)
+    if check_mana(stats['mana']) && check_fun(stats['fun']) \
+       && check_tire(stats['tire']) && check_money(stats['money'])
       @stats = stats
       return true
     end
     false
   end
 
-  def check_health(health)
-    health <= 100 && health >= 0
+  def fix_stats(stats)
+    stats['health'] = 100 if stats['health'] > 100
+    stats['mana'] = 0 if stats['mana'] < 0
+    stats['fun'] = 10 if stats['fun'] > 10
+    stats['tire'] = 0 if stats['tire'] < 0
   end
 
   def check_mana(mana)
