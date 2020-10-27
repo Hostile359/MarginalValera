@@ -52,7 +52,7 @@ class Actions
     stats
   end
 
-  def self.sleep(stats)
+  def self.go_to_sleep(stats)
     stats['health'] += 90 if stats['mana'] < 30
     stats['fun'] -= 3 if stats['mana'] > 70
     stats['mana'] -= 50
