@@ -78,7 +78,7 @@ RSpec.describe Actions do
         'tire' => -45,
         'money' => 2500
       }
-      it { expect(Actions.sleep(stats.clone)).to eq expected }
+      it { expect(Actions.go_to_sleep(stats.clone)).to eq expected }
     end
   end
 end
