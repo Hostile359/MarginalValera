@@ -11,15 +11,6 @@ class Valera
     }
   end
 
-  def print_stats
-    puts("\nПараметры Валеры:")
-    puts("Здоровье: #{@stats['health']}")
-    puts("Алкоголь: #{@stats['mana']}")
-    puts("Веселье: #{@stats['fun']}")
-    puts("Усталость: #{@stats['tire']}")
-    puts("Деньги: #{@stats['money']}\n\n")
-  end
-
   def check_stats(stats)
     fix_stats(stats)
     if check_mana(stats['mana']) && check_fun(stats['fun']) \
