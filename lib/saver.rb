@@ -12,10 +12,15 @@ class Saver
     file.close
   end
 
-  def self.saver(stats, choice, filename = nil)
-    puts('Введите имя пользователя')
-    filename = "./resources/#{gets.strip}.json" if filename.nil?
-    puts filename
+  def self.saver(stats, choice)
+    filename = ''
+    loop do
+      puts('Введите имя пользователя')
+      filename = "./resources/#{$stdin.gets.strip}.json"
+      break unless !File.file?(filename) && (choice == 9)
+
+      puts('Такого пользователя не существует')
+    end
     if choice == 9
       read_stats(filename)
     else

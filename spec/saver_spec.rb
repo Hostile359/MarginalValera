@@ -10,9 +10,12 @@ RSpec.describe Saver do
         'tire' => 25,
         'money' => 2500
       }
-      Saver.saver(stats, 10, './resources/testprofile.json')
-      curr_stats = Saver.saver(stats, 9, './resources/testprofile.json')
-      it { expect(curr_stats).to eq stats }
+      it {
+        allow($stdin).to receive(:gets).and_return('testprofile')
+        Saver.saver(stats, 10)
+        curr_stats = Saver.saver(stats, 9)
+        expect(curr_stats).to eq stats
+      }
     end
   end
 end
