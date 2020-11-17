@@ -18,6 +18,7 @@ class Saver
       puts('Введите имя пользователя')
       filename = "./resources/#{$stdin.gets.strip}.json"
       break unless !File.file?(filename) && (choice == 9)
+
       puts('Такого пользователя не существует')
     end
     if choice == 9
