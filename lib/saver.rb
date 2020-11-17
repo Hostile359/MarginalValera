@@ -12,9 +12,9 @@ class Saver
     file.close
   end
 
-  def self.saver(stats, choice)
+  def self.saver(stats, choice, filename = nil)
     puts('Введите имя пользователя')
-    filename = "./resources/#{gets.strip}.json"
+    filename = "./resources/#{gets.strip}.json" if filename.nil?
     puts filename
     if choice == 9
       read_stats(filename)
