@@ -36,6 +36,7 @@ class GameProcess
 
   def do_action
     stats = GameProcess.actions[@action_item].call(@valera.stats.clone)
+    system('clear')
     puts("\nНедопустимое действие! Попробуйте снова") if check_action(stats)
     return false if @valera.stats['health'] <= 0
 

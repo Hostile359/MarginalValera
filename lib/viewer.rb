@@ -15,7 +15,6 @@ class Viewer
   end
 
   def print_stats(valera)
-    system('clear')
     puts("\nПараметры Валеры:")
     puts("Здоровье: #{valera.stats['health']}")
     puts("Алкоголь: #{valera.stats['mana']}")
